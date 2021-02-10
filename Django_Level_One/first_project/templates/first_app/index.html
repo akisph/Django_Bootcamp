@@ -1,0 +1,16 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> First App </title>
+</head>
+<body>
+    <h1> Hello this is index.html</h1>
+
+    <h6> {{ insert_me }} </h6> <!-- Jinga Syntax -->
+
+    <img src="{% static 'images/t.jpg' %}"   alt=" Uh Oh, cannot find the picture" />
+
+</body>
+</html>
