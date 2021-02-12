@@ -1,0 +1,11 @@
+h1{
+    color:red;
+}
+.djangotwo{
+    border: 2px solid black;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 400px;
+    margin-bottom: 100px;
+    margin-top: 20px;
+}
