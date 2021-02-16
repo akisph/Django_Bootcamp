@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+</head>
+<body>
+    <h1>Sign Up Page </h1>
+    <div class="container">
+        <h2>Please sign up bellow</h2>
+        <form class="newusr" method = "POST">
+            {{ form.as_p }} <!-- WE could only add {{form}} but as p get each fields as seperate paragraph-->
+            {% csrf_token %}
+            <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+
+    </div>
+    
+    
+</body>
+</html>

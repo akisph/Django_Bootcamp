@@ -1,0 +1,40 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> First App </title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href= "{% static  "css/style.css" %}"/>
+</head>
+<body>
+    <h1>Hello Welcome to Django </h1>
+    <h2>Here are your access records: </h2>
+    
+    <div class="djangotwo">
+        {% if access_records %}
+            <table class='table table-striped'>
+                <thead >
+                    <th>Site Name</th>
+                    <th>Date Accessed</th>
+                </thead>
+                {% for acc in access_records %}
+                <tr>
+                    <td>{{ acc.name }}</td>
+                    <td>{{ acc.date }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p> NO ACCESS RECORDS </p>   
+        {% endif %}     
+
+    </div>
+
+
+
+    <img src="{% static 'images/t.jpg' %}"   alt=" Uh Oh, cannot find the picture" class="img-thumbnail"/>
+
+</body>
+</html>
