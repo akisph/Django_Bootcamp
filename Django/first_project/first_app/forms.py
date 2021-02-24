@@ -1,6 +1,7 @@
 from django import forms
 from django.core import validators # 2nd valiudation way
-from first_app.models import Topic,Webpage,AccessRecords
+from django.contrib.auth.models import User
+from first_app.models import Topic,Webpage,AccessRecord,UserProfileInfo
 
 # in case you want to make an custom validation 
 # you ll need to make a function outside of the 
@@ -11,7 +12,7 @@ def check_for_z(value): #must always pass this variable "value"
         raise forms.ValidationError('The field needs to start with z')
 
 class FormName(forms.Form):
-    # there are three basic inpouts
+    # there are three basic inputs
 
     name = forms.CharField(validators=[check_for_z])
     email = forms.EmailField()
@@ -40,3 +41,25 @@ class FormName(forms.Form):
     #     if len(botcatcher) > 0:
     #         raise forms.ValidationError("We hit a bot")
     #     return botcatcher
+
+class UserForm(forms.ModelForm):
+    """ Class to sighnup new user""" 
+    password = forms.CharField(widget = forms.PasswordInput()) # Because we want to edfit it a bit 
+    
+    class Meta:
+        model = User
+        fields = ('username','email','password')
+
+
+
+
+class UserProfileInfoForm(forms.ModelForm):
+    """ Class to extend USer info """
+    class Meta:
+        model = UserProfileInfo
+        fields = ('portfolio','picture')
+
+
+
+
+

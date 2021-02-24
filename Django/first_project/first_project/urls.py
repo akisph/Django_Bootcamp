@@ -21,6 +21,9 @@ from first_app import views # import our apps views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index, name='index'),
-    path('form/',views.form_name_view,name='form')
+    path('form/',views.form_name_view,name='form'),
+    path('home/', views.home, name='home'),
+    path('registration/',views.register,name='registration')
+
 ]
 
